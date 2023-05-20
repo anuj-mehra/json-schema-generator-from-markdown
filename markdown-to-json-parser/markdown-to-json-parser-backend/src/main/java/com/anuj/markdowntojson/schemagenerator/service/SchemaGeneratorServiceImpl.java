@@ -1,7 +1,6 @@
 package com.anuj.markdowntojson.schemagenerator.service;
 
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileVisitResult;
 import java.nio.file.Files;
@@ -12,12 +11,12 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.anuj.markdowntojson.schemagenerator.manager.SchemaGeneratorManagerImpl;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.anuj.markdowntojson.exception.ApplicationException;
-import com.anuj.markdowntojson.schemagenerator.manager.SchemaGeneratorManager;
 import com.anuj.markdowntojson.util.ApplicationConstants;
 import com.anuj.markdowntojson.util.HTTPMethods;
 
@@ -33,7 +32,7 @@ public class SchemaGeneratorServiceImpl extends SchemaGeneratorService{
 	 * Reference object for SchemaGeneratorManager
 	 */
 	@Autowired
-	private SchemaGeneratorManager schemaGeneratorManager;
+	private SchemaGeneratorManagerImpl schemaGeneratorManager;
 
 	/**
 	 * Logger Object.
@@ -48,7 +47,7 @@ public class SchemaGeneratorServiceImpl extends SchemaGeneratorService{
 
 		LOG.info("********************************************************* Creating output folders *********************************************************");
 
-		final String filePath = new File("").getAbsolutePath().replace("\\", "/").concat(schemaFolderLocation);
+		final String filePath = schemaFolderLocation;
 
 		for(final HTTPMethods httpType : HTTPMethods.values())
 		{

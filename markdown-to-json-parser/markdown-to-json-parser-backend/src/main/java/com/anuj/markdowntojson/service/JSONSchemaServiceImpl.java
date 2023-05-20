@@ -43,22 +43,20 @@ public class JSONSchemaServiceImpl {
 	
 	/**
 	 * This method makes call to the MarkdownParserService and SchemaGeneratorService
-	 * @param markdownFileLocation String -- 
+	 * @param markdownFileFullyQualifiedName String --
 	 * @param outputFolderLocation String
 	 * 
 	 */
 	public void execute(String markdownFileFullyQualifiedName, String outputFolderLocation) throws ApplicationException{
 		
 		LOG.info("Starting to parse markdownFile: "+ markdownFileFullyQualifiedName);
-		
-		//markdownParserService.parse(fileSystemPath + MARKDOWN_FILE_LOCATION + inputMarkdownFileName + ".md");
+
 		markdownParserService.parse(markdownFileFullyQualifiedName);
 		
-		//LOG.info("Successfully parsed markdownFile: "+ MARKDOWN_FILE_LOCATION + inputMarkdownFileName + ".md");
+		LOG.info("Successfully parsed markdownFile: "+ markdownFileFullyQualifiedName);
 		
-		//LOG.info("Starting to generate Schema's in location: "+ fileSystemPath + outputFolderLocation);
-		
-		//schemaGeneratorService.generateJSONSchema(fileSystemPath + outputFolderLocation);
+		LOG.info("Starting to generate Schema's in location: "+ outputFolderLocation);
+
 		schemaGeneratorService.generateJSONSchema(outputFolderLocation);
 		
 		LOG.info("Successfully generated Schema's in location: "+ outputFolderLocation);

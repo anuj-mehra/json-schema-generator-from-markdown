@@ -30,7 +30,7 @@ import com.anuj.markdowntojson.util.HTTPMethods;
  *
  */
 @Component("schemaGeneratorManager")
-public class SchemaGeneratorManagerImpl implements SchemaGeneratorManager{
+public class SchemaGeneratorManagerImpl {
 
 	/**
 	 * Logger object.
@@ -162,7 +162,7 @@ public class SchemaGeneratorManagerImpl implements SchemaGeneratorManager{
 	
 	/**
 	 * 
-	 * @param fileName String
+	 * @param datatypeName String
 	 * @throws ApplicationException
 	 */
 	public void generateCompositeDataTypes(String datatypeName) throws ApplicationException {

@@ -12,7 +12,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  *
  */
 @Configuration
-@ComponentScan(basePackages = "com.anuj.markdownparser")
+@ComponentScan(basePackages = "com.anuj.markdowntojson")
 //@PropertySource("file:resources/environment.properties")
 @EnableAspectJAutoProxy
 public class SpringBeanConfig {
