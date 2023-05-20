@@ -52,7 +52,7 @@ public class SchemaGeneratorServiceImpl extends SchemaGeneratorService{
 		for(final HTTPMethods httpType : HTTPMethods.values())
 		{
 
-			final Path dir = Paths.get(filePath + httpType.toString());
+			final Path dir = Paths.get(filePath + "/" + httpType.toString());
 
 			try{
 				if(Files.exists(dir)){

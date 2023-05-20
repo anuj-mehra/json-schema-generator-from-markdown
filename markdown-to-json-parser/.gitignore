@@ -10,7 +10,7 @@ manifest.yml
 .classpath
 .project
 .settings/
-
+*.json
 # IntelliJ project files
 .idea
 *.iml
